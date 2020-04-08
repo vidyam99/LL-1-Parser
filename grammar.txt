@@ -1,0 +1,9 @@
+%Tokens + * id ( ) e
+%Non-terminals <E> <EDASH> <T> <TDASH> <F>
+%Start <E>
+%Rules
+<E> : <T> <EDASH>
+<EDASH> : + <T> <EDASH> | e
+<T> : <F> <TDASH>
+<TDASH> : * <F> <TDASH> | e
+<F> : id | ( <E> )
