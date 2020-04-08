@@ -170,19 +170,12 @@ public class ParserDriver
 		try
 		{
 			parserGenerator.saveParseTable(parseTableFile);
+			System.out.println("Parse table saved at: "+parseTableFile);
+			System.out.println();
 		}
 		catch(IOException e)
 		{
 			throw new RuntimeException("\n Save parse table failed.");
-		}
-		
-		//======================================================================
-		//=======RETURN IF ONLY BUILDING PARSE TABLE, NOT PARSING===============
-		//======================================================================
-		if(scannerFile==null)
-		{
-			System.out.println("Parse table saved at: "+parseTableFile);
-			return;
 		}
 		
 		//======================================================================
@@ -233,9 +226,10 @@ public class ParserDriver
 		//======================================================================
 		//=======STEP 4: Parse the input========================================
 		//======================================================================
-		
-		Parser.parse(input, parserGenerator.getParseTable());			
-		System.out.println("Parse completed successfully! No errors detected.");
+		if(Parser.parse(input, parserGenerator.getParseTable()))		
+			System.out.println("Parse completed successfully! No errors detected.");
+		else
+			System.out.println("Error while parsing!");
 		
 	}
 	
