@@ -1,13 +1,6 @@
 import java.io.*;
 import java.util.LinkedList;
 
-/**
- * Class that runs the parsing segment of the project.
- * 
- * @author Logan Blyth, James McCarty, & Robert Rayborn 
- *
- */
-
 public class ParserDriver
 {
 	private static boolean verbose;

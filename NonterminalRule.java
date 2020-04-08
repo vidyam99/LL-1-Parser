@@ -1,13 +1,6 @@
 import java.util.Collection;
 import java.util.LinkedList;
 
-/**
- * Class for a nonterminal rule.
- * 
- * @author Logan Blyth, James McCarty, & Robert Rayborn 
- *
- */
-
 public class NonterminalRule extends GrammarRule
 {
 	/**
